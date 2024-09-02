@@ -1,0 +1,54 @@
+(?!\n)\s:
+
+
+
+
+\s matches new line also.
+
+Only if it not new line
+
+
+The following is wrong
+
+\s(?!\n)
+
+It first matches a space then the next character is checked for not a new line.
+
+
+Explanation
+
+In regular expressions, the ? character has a few different meanings depending on how it's used. Here are the main uses of ?:
+
+1. Quantifier: "0 or 1"
+Pattern: a?
+Meaning: Matches zero or one occurrence of the preceding character or group.
+Example:
+Regex: colou?r
+Matches: color and colour (because the u can appear zero or one time).
+2. Non-Greedy Quantifier (Lazy)
+Pattern: .*? or .+?
+Meaning: Makes a quantifier (*, +, {n,m}, etc.) non-greedy, meaning it will match as few characters as possible.
+Example:
+Regex: <.*?>
+Matches: <a> in <a><b> (instead of <a><b>), because *? tells it to stop at the first match.
+3. Lookahead and Lookbehind Assertions
+Pattern: (?=...) or (?!...)
+Meaning: Used in lookahead and lookbehind assertions.
+Lookahead: Asserts that something must or must not follow.
+Lookbehind: Asserts that something must or must not precede.
+Example:
+a(?=b): Matches a only if it is followed by b.
+a(?!b): Matches a only if it is not followed by b.
+4. Ternary Operator (in programming, not regex)
+Pattern: condition ? expr1 : expr2
+Meaning: Used in many programming languages as a shorthand for an if-else statement, not in regex.
+Example:
+x = (a > b) ? a : b;
+This assigns the value of a to x if a is greater than b, otherwise b.
+Summary
+a?: Matches zero or one a.
+.*?: Matches as few characters as possible (non-greedy).
+(?=...) or (?!...): Lookahead assertions to check if something must/must not follow.
+Each of these uses has its own context and meaning within regular expressions, so the exact behavior depends on how and where ? is placed in the pattern.
+
+
