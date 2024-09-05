@@ -1,0 +1,11 @@
+display only the lines starting with 
+
+
+grep "^akram\|^abram\|^asrar" filename
+
+
+
+Otherwise use a flag -E ( enables Extended Regular Expressions (ERE), which allows you to use more powerful and convenient regular expression features without the need to escape certain characters)
+
+grep -E "^akram|^abram|^asrar" filename
+New File at / ·
